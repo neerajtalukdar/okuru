@@ -152,7 +152,7 @@ export default function PlaylistView({ data, id }: { data: StoredPlaylist; id: s
                   {track.spotify?.albumArt ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
-                      src={track.spotify.albumArt}
+                      src={`/api/image?url=${encodeURIComponent(track.spotify.albumArt)}`}
                       alt={`${track.title} album art`}
                       className="w-full h-full object-cover"
                     />
