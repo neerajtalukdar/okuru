@@ -57,17 +57,9 @@ export default function PlaylistView({ data, id }: { data: StoredPlaylist; id: s
     : `/p/${id}`;
 
   const handleShare = () => {
-    if (navigator.share) {
-      navigator.share({
-        title: playlist.playlistName,
-        text: `A playlist made for ${recipient}: ${playlist.playlistTheme}`,
-        url: shareUrl,
-      });
-    } else {
-      navigator.clipboard.writeText(shareUrl);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    }
+    navigator.clipboard.writeText(shareUrl);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   };
 
   return (
