@@ -30,7 +30,7 @@ export interface StoredPlaylist {
 
 export async function savePlaylist(data: Omit<StoredPlaylist, "createdAt">): Promise<string> {
   const id = nanoid(8);
-  await redis.set(`playlist:${id}`, { ...data, createdAt: Date.now() }, { ex: 60 * 60 * 24 * 90 }); // 90 days
+  await redis.set(`playlist:${id}`, { ...data, createdAt: Date.now() });
   return id;
 }
 
