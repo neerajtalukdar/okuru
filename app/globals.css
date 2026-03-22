@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0c0a10;
+  --fg: #f0eee8;
+  --muted: #7a7270;
+  --muted-light: #a09890;
+  --border: #1e1a24;
+  --surface: #13101a;
+  --surface-2: #1a1624;
+  --accent: #c4a882;
+  --accent-soft: rgba(196, 168, 130, 0.12);
+  --accent-glow: rgba(196, 168, 130, 0.06);
+  --purple: #a78bfa;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
