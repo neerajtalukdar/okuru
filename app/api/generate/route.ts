@@ -51,8 +51,8 @@ Include exactly 10 tracks. Make them feel handpicked, not algorithmic. Mix eras 
     let spotifyToken: string | null = null;
     try {
       spotifyToken = await getSpotifyToken();
-    } catch {
-      // Spotify not configured
+    } catch (e) {
+      console.error("Spotify token error:", e);
     }
 
     if (spotifyToken) {
