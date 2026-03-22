@@ -2,7 +2,6 @@
 
 import { useRouter } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
-import Image from "next/image";
 import type { StoredPlaylist } from "@/lib/store";
 
 function useAudioPlayer(tracks: StoredPlaylist["playlist"]["tracks"]) {
@@ -151,12 +150,11 @@ export default function PlaylistView({ data, id }: { data: StoredPlaylist; id: s
                   style={{ background: "var(--surface-2)" }}
                 >
                   {track.spotify?.albumArt ? (
-                    <Image
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
                       src={track.spotify.albumArt}
                       alt={`${track.title} album art`}
-                      fill
-                      className="object-cover"
-                      sizes="44px"
+                      className="w-full h-full object-cover"
                     />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center text-xs" style={{ color: "var(--muted)" }}>
